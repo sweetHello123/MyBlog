@@ -1,0 +1,26 @@
+server:
+  port: 8900
+
+spring:
+  application:
+    name: myblog-admin
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/myblog?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8
+      username: root
+      password: root
+  # 上传文件总的最大值
+  servlet:
+    multipart:
+      max-request-size: 20MB
+      max-file-size: 2MB
+
+mybatis-plus:
+  configuration:
+    # 在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: assign_id

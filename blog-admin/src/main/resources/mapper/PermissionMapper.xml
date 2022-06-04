@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.admin.mapper.PermissionMapper">
+    <resultMap id="BaseResultMap" type="com.it.admin.entity.Permission">
+        <!--@mbg.generated-->
+        <!--@Table permission-->
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="path" jdbcType="VARCHAR" property="path"/>
+        <result column="description" jdbcType="VARCHAR" property="description"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        id, `name`, `path`, description
+    </sql>
+    <select id="getAdminPermission" parameterType="long" resultMap="BaseResultMap">
+    SELECT *
+    FROM permission
+    WHERE id IN (SELECT permission_id
+        FROM admin_permission
+        WHERE admin_id=#{id});
+  </select>
+</mapper>

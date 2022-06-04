@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.api.mapper.ArticleBodyMapper">
+  <resultMap id="BaseResultMap" type="com.it.api.entity.ArticleBody">
+    <!--@mbg.generated-->
+    <!--@Table article_body-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="content_html" jdbcType="LONGVARCHAR" property="contentHtml" />
+    <result column="article_id" jdbcType="BIGINT" property="articleId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, content, content_html, article_id
+  </sql>
+</mapper>
