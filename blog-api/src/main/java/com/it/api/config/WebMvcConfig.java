@@ -23,7 +23,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
         //跨域配置，不可设置为*，不安全, 前后端分离项目，可能域名不一致
         //本地测试 端口不一致 也算跨域
         registry.addMapping("/**")
-                .allowedOrigins("http://124.221.170.69", "http://localhost:8080");
+                .allowedOrigins("http://www.hellowu.site", "http://localhost:8080");
     }
 
     @Override
